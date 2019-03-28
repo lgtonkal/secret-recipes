@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyText
+  preparation_time: 1
+  cooking_time: 1
+  portion: 1
+  food: one
+
+two:
+  description: MyText
+  preparation_time: 1
+  cooking_time: 1
+  portion: 1
+  food: two
