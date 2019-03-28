@@ -1,5 +1,6 @@
 class RecipesController < ApplicationController
 
+    #before_action :authorize_request, except: :create
     before_action :set_food
     before_action :set_food_recipe, only: [:show, :update, :destroy]
 
@@ -10,7 +11,7 @@ class RecipesController < ApplicationController
 
     # GET /foods/:food_id/recipes/:id
     def show
-        render json: @recipe, status: :ok
+        render json: @recipe, include: 'food', status: :ok
     end
 
     # POST /foods/:food_id/recipes
