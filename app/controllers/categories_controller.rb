@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
 
-    #before_action :authorize_request, except: :create
+    before_action :authorize_request
     before_action :set_category, only: [:show, :update, :destroy]
 
   # GET /categories

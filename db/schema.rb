@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_28_193000) do
+ActiveRecord::Schema.define(version: 2019_03_29_091928) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,9 +22,22 @@ ActiveRecord::Schema.define(version: 2019_03_28_193000) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "categories_foods", id: false, force: :cascade do |t|
+    t.bigint "food_id", null: false
+    t.bigint "category_id", null: false
+    t.index ["category_id", "food_id"], name: "index_categories_foods_on_category_id_and_food_id"
+    t.index ["food_id", "category_id"], name: "index_categories_foods_on_food_id_and_category_id"
+  end
+
   create_table "foods", force: :cascade do |t|
     t.string "name"
     t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "materials", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -38,6 +51,13 @@ ActiveRecord::Schema.define(version: 2019_03_28_193000) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["food_id"], name: "index_recipes_on_food_id"
+  end
+
+  create_table "units", force: :cascade do |t|
+    t.string "name"
+    t.string "shortcode"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

@@ -1,12 +1,12 @@
 class FoodsController < ApplicationController
 
-    before_action :authorize_request, except: :create
+    before_action :authorize_request, only: :destroy
     before_action :set_food, only: [:show, :update, :destroy]
 
-  # GET /foods
+    # GET /foods
     def index
         @foods = Food.all
-        render json: @foods, status: :ok
+        render json: @foods, include: 'categories', status: :ok
     end
 
     # POST /foods
@@ -36,7 +36,7 @@ class FoodsController < ApplicationController
 
     def food_params
         # whitelist params
-        params.permit(:name, :image)
+        params.permit(:name, :image, category_ids: [])
     end
 
     def set_food

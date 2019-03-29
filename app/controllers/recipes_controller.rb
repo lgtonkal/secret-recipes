@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
 
-    #before_action :authorize_request, except: :create
+    before_action :authorize_request, only: :destroy
     before_action :set_food
     before_action :set_food_recipe, only: [:show, :update, :destroy]
 

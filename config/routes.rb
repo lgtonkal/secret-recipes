@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   end
 
   resources :categories
+  resources :units
+  resources :materials
 
   resources :users, param: :_username
   post '/auth/login', to: 'authentication#login'
