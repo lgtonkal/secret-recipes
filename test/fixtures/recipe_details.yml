@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  quantity: 
+  quantity: 
+  optional: false
+  recipe: one
+  unit: one
+  material: one
+
+two:
+  quantity: 
+  quantity: 
+  optional: false
+  recipe: two
+  unit: two
+  material: two

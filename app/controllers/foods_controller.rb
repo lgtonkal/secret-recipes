@@ -6,7 +6,7 @@ class FoodsController < ApplicationController
     # GET /foods
     def index
         @foods = Food.all
-        render json: @foods, include: 'categories', status: :ok
+        render json: @foods, include: ['categories', 'recipes'], status: :ok
     end
 
     # POST /foods
