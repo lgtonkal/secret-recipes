@@ -7,7 +7,7 @@ class RecipeDetailsController < ApplicationController
 
     # GET /foods/:food_id/recipes/:recipe_id/recipe_details
     def index
-        render json: @recipe.recipe_details,include: ['recipe', 'unit','material'], status: :ok
+        render json: @recipe.recipe_details, include: ['recipe', 'unit','material'], status: :ok
     end
 
     # GET /foods/:food_id/recipes/:recipe_id/recipe_details/:id
