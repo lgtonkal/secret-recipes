@@ -6,12 +6,12 @@ class RecipesController < ApplicationController
 
     # GET /foods/:food_id/recipes
     def index
-        render json: @food.recipes, include: ['food', 'recipe_details'], status: :ok
+        render json: @food.recipes, status: :ok
     end
 
     # GET /foods/:food_id/recipes/:id
     def show
-        render json: @recipe, include: 'recipe_details', status: :ok
+        render json: @recipe, status: :ok
     end
 
     # POST /foods/:food_id/recipes
